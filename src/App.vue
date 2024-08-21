@@ -1,25 +1,19 @@
 <script>
   import TheHeader from './components/TheHeader.vue'
   import TheHome from './components/home/TheHome.vue';
+  import TheSkills from './components/skills/TheSkills.vue';
   export default {
     components: {
       TheHeader,
-      TheHome
-    },
-    data(){
-      return {
-
-      }
-    },
-    methods: {
-
+      TheHome,
+      TheSkills
     }
   }
 </script>
 
 <template>
   <TheHeader />
-  <TheHome />
+  <router-view></router-view>
 </template>
 
 <style>

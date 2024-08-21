@@ -1,12 +1,17 @@
 <template>
-    <header>
-        <slot></slot>
-    </header>
+    <CardModel>
+        <header>
+            <slot></slot>
+        </header>
+    </CardModel>
 </template>
 
-<style>
+<style scoped>
+    div{
+        border-radius: 4rem;
+        padding: 1rem 1.5rem;
+    }
     header{
-        background-color: #171718;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -16,10 +21,5 @@
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
-        padding: 1rem 1.5rem;
-        margin-top: 1.25rem;
-        color: white;
-        border: 1px solid #ccc;
-        border-radius: 4rem;
     }
 </style>

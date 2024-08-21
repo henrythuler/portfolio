@@ -10,16 +10,18 @@
 </script>
 
 <template>
-    <div class="container">
-        <div class="wrapper">
-            <div>
-                <AboutMe />
-            </div>
-            <div>
-                <MyPicture />
+    <section id="home">
+        <div class="container">
+            <div class="wrapper">
+                <div class="about-me">
+                    <AboutMe />
+                </div>
+                <div class="my-picture">
+                    <MyPicture />
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <style scoped>
@@ -28,7 +30,10 @@
         display: flex;
         align-items: center;
     }
-    .wrapper div{
-        width: 100%;
+    .about-me{
+        width: 60%;
+    }
+    .my-picture{
+        width: 40%;
     }
 </style>

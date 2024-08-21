@@ -1,28 +1,17 @@
-<script>
-    import HeaderModel from './layout/HeaderModel.vue';
-    export default {
-        components: {
-            HeaderModel
-        }
-    }
-</script>
-
 <template>
     <div class="container">
         <HeaderModel>
             <nav>
                 <ul>
-                    <li>
-                        <a href="">Home</a>
-                    </li>
-                    <li><a href="">Skills</a></li>
+                    <li><router-link to="/home">Home</router-link></li>
+                    <li><router-link to="/skills">Skills</router-link></li>
                 </ul>
             </nav>
             <h1>THULER</h1>
             <nav>
                 <ul>
-                    <li><a href="">Projects</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><router-link to="/projects">Projects</router-link></li>
+                    <li><router-link to="/contact">Contact</router-link></li>
                 </ul>
             </nav>
         </HeaderModel>
@@ -30,8 +19,17 @@
 </template>
 
 <style scoped>
+    div{
+        margin-top: 1.5rem;
+        margin-bottom: 5rem;
+        animation: loadDown ease-in 1s forwards;
+    }
+    header{
+        width: 100%;
+    }
     h1{
         font-size: 2.5rem;
+        font-family: "Jost", sans-serif;
     }
     nav{
         -webkit-box-flex: 1;
@@ -53,6 +51,10 @@
         font-size: 1.1rem;
         padding: .75rem 1.5rem;
         border-radius: 3rem;
+        transition: all ease-in-out .3s;
+    }
+    nav ul li a.router-link-active{
+        background-color: #28E98C;
     }
     nav ul li a:hover{
         background-color: #28E98C;
