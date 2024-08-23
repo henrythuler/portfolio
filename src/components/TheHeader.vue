@@ -20,8 +20,8 @@
 
 <style scoped>
     div{
-        margin-top: 1.5rem;
-        margin-bottom: 5rem;
+        margin-top: 2rem;
+        margin-bottom: 6rem;
         animation: loadDown ease-in 1s forwards;
     }
     header{

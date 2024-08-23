@@ -1,12 +1,8 @@
 <script>
   import TheHeader from './components/TheHeader.vue'
-  import TheHome from './components/home/TheHome.vue';
-  import TheSkills from './components/skills/TheSkills.vue';
   export default {
     components: {
       TheHeader,
-      TheHome,
-      TheSkills
     }
   }
 </script>
@@ -23,5 +19,20 @@
   .container{
     margin: 0 auto;
     max-width: 1280px;
+  }
+  .carousel__icon{
+    color: white;
+  }
+  .carousel .carousel__prev{
+    left: 100px;
+  }
+  .carousel .carousel__next{
+    right: 100px;
+  }
+  .carousel .carousel__prev,
+  .carousel .carousel__next{
+    background-color: #171718;
+    padding: .5rem;
+    border-radius: 50%;
   }
 </style>

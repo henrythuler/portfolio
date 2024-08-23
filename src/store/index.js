@@ -66,6 +66,22 @@ export default createStore({
                     title: "MySQL",
                     image: "/logo-mysql.png"
                 },
+            ],
+            projects: [
+                {
+                    title: "OrangeX API",
+                    image: "/logo-orange.png",
+                    description: "",
+                    link: "https://github.com/henrythuler/orangex-api",
+                    usedSkills: ["/logo-java.png", "/logo-spring.png", "/logo-mongo.png"]
+                },
+                {
+                    title: "Thuler Products",
+                    image: "/thuler-products.png",
+                    description: "",
+                    link: "https://github.com/henrythuler/thuler-products",
+                    usedSkills: ["/logo-java.png", "/logo-postgre.png"]
+                }
             ]
         }
     }

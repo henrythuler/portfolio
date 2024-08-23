@@ -1,5 +1,9 @@
 <script>
+    import CardSkills from '../layout/CardSkills.vue';
     export default {
+        components: {
+            CardSkills
+        },
         data(){
             return {
                 mySkills: this.$store.state.skills
@@ -12,10 +16,10 @@
     <section id="skills">
         <div class="container">
             <div class="wrapper">
-                <CardModel class="skill" v-for="skill of mySkills" :key="skill.id">
+                <CardSkills class="skill" v-for="skill of mySkills" :key="skill.id">
                     <img :src="skill.image">
                     <h3>{{ skill.title }}</h3>
-                </CardModel>
+                </CardSkills>
             </div>
         </div>
     </section>
@@ -32,20 +36,10 @@
         justify-content: center;
     }
     .skill{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
         gap: 1rem;
         padding: 1rem 2rem;
         border-radius: 1rem;
-        transition: all ease-in-out .3s;
-        text-align: center;
         width: 165px;
-    }
-    .skill:hover{
-        animation: scaleUp ease-in-out .3s forwards;
-        box-shadow: 0px 0px 0.5rem #28E98C;
     }
     .skill img{
         width: 75px;
