@@ -56,6 +56,12 @@
     #app{
       padding: 1rem 0;
     }
+    .carousel .carousel__prev{
+      left: 0;
+    }
+    .carousel .carousel__next{
+      right: 0;
+    }
   }
   @media(max-width: 768px){
     .container{
