@@ -47,9 +47,9 @@
     h3{
         font-size: 1.25rem;
     }
-    @media(max-width: 768px){
+    @media(max-width: 1300px){
         #skills{
-            margin-top: 2rem;
+            padding-top: 2rem;
         }
     }
 </style>

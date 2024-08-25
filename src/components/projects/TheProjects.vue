@@ -71,6 +71,12 @@
     #projects{
         animation: loadUp ease-in-out 1s forwards;
     }
+    .carousel{
+        width: 100%;
+    }
+    .carousel__slide{
+        max-width: 100%;
+    }
     .wrapper{
         display: flex;
         justify-content: center;
@@ -106,5 +112,17 @@
     }
     .modal-card{
         width: 50%;
+    }
+    @media (max-width: 768px){
+        .project-image img{
+            height: 260px;
+            border-radius: 1rem;
+        }
+    }
+    @media (max-width: 564px){
+        .project-image img{
+            height: 200px;
+            border-radius: 1rem;
+        }
     }
 </style>

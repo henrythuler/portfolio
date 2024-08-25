@@ -10,8 +10,11 @@
             }
         },
         methods: {
-            showHideMenu(){
-                this.isMenuVisible = !this.isMenuVisible
+            showMenu(){
+                this.isMenuVisible = true
+            },
+            hideMenu(){
+                this.isMenuVisible = false
             }
         }
     }
@@ -26,22 +29,27 @@
                     <li><router-link to="/skills">Skills</router-link></li>
                 </ul>
             </nav>
-            <h1 v-show="!isMenuVisible">THULER</h1>
+            <h1>THULER</h1>
             <nav class="desktop-menu">
                 <ul>
                     <li><router-link to="/projects">Projects</router-link></li>
                     <li><router-link to="/contact">Contact</router-link></li>
                 </ul>
             </nav>
-            <img @click="showHideMenu" class="menu-button" src="/menu-icon.png" alt="Menu Icon">
-            <nav v-if="isMenuVisible" class="mobile-menu">
-                <ul>
-                    <li><router-link to="/home">Home</router-link></li>
-                    <li><router-link to="/skills">Skills</router-link></li>
-                    <li><router-link to="/projects">Projects</router-link></li>
-                    <li><router-link to="/contact">Contact</router-link></li>
-                </ul>
-            </nav>
+            <img @click="showMenu" class="menu-button" src="/menu-icon.png" alt="Menu Icon">
+            <teleport to="body">
+                <transition name="mobile-menu-animation">
+                <nav v-if="isMenuVisible" class="mobile-menu">
+                    <TheButton class="close-menu-button" @click="hideMenu">X</TheButton>
+                    <ul>
+                        <li><router-link to="/home">Home</router-link></li>
+                        <li><router-link to="/skills">Skills</router-link></li>
+                        <li><router-link to="/projects">Projects</router-link></li>
+                        <li><router-link to="/contact">Contact</router-link></li>
+                    </ul>
+                </nav>
+                </transition>
+            </teleport>
         </HeaderModel>
     </div>
 </template>
@@ -51,8 +59,10 @@
         width: 100%;
     }
     .main-header{
+        position: relative;
         width: 100%;
         animation: loadDown ease-in 1s forwards;
+        z-index: 999;
     }
     header{
         width: 100%;
@@ -90,11 +100,29 @@
         background-color: #28E98C;
     }
     .mobile-menu{
-        animation: loadLeft .5s ease-in-out forwards;
-        width: 100%;
+        position: fixed;
+        z-index: 9999;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #0E0E0E;
+        padding: 3rem 1rem;
     }
     .mobile-menu ul{
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    .mobile-menu-animation-enter-active{
+        animation: loadLeft .5s ease-in-out forwards;
+    }
+    .mobile-menu-animation-leave-active{
+        animation: unloadRight .5s ease-in-out forwards;
+    }
+    .close-menu-button{
+        width: max-content;
+        margin-bottom: 2rem;
     }
     .menu-button{
         display: none;
