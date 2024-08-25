@@ -50,3 +50,25 @@ html{
         transform: translateY(0);
     }
 }
+
+@keyframes unload{
+    from{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+@keyframes loadLeft{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

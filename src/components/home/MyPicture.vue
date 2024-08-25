@@ -16,4 +16,19 @@
         width: 400px;
         filter: drop-shadow(5px 5px 0.5rem #28E98C);
     }
+    @media(max-width: 1300px){
+        img{
+            width: 300px;
+        }
+    }
+    @media(max-width: 1024px){
+        img{
+            width: 200px;
+        }
+    }
+    @media(max-width: 564px){
+        img{
+            display: none;
+        }
+    }
 </style>

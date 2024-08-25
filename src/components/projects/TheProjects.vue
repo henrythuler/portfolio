@@ -2,6 +2,7 @@
     import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
     import 'vue3-carousel/dist/carousel.css'
     import CardSkills from '../layout/CardSkills.vue';
+    import TheModal from '../layout/TheModal.vue';
 
     export default {
         components: {
@@ -9,11 +10,30 @@
             Slide,
             Pagination,
             Navigation,
-            CardSkills
+            CardSkills,
+            TheModal
         },
         data(){
             return {
-                myProjects: this.$store.state.projects
+                myProjects: this.$store.state.projects,
+                showDescription: false,
+                modalTitle: '',
+                modalDescription: '',
+                modalLink: ''
+            }
+        },
+        methods: {
+            openModal(title, description, link){
+                this.showDescription = true
+                this.modalTitle = title
+                this.modalDescription = description
+                this.modalLink = link
+            },
+            closeModal(){
+                this.showDescription = false
+                this.modalTitle = ''
+                this.modalDescription = ''
+                this.modalLink = link
             }
         }
     }
@@ -23,63 +43,54 @@
     <section id="projects">
         <div class="container">
             <div class="wrapper">
-                <carousel :items-to-show="1">
+                <carousel :items-to-show="1" :autoplay="3000" :pause-autoplay-on-hover="true">
                     <slide v-for="(project, i) of myProjects" :key="i">
-                        <CardModel class="project">
-                            <a target="_blank" :href="project.link" class="project-link">
-                                <div class="project-image">
-                                    <img :src="project.image">
-                                </div>
-                                <div class="project-description">
-                                    <h3>{{ project.title }}</h3>
-                                    <div class="project-used-skills">
-                                        <CardSkills class="skill" v-for="(image, i) of project.usedSkills" :key="i">
-                                            <img :src="image">
-                                        </CardSkills>
-                                    </div>
-                                </div>
-                            </a>
+                        <CardModel @click="openModal(project.title, project.description, project.link)" class="project">
+                            <h3>{{ project.title }}</h3>
+                            <div class="project-image">
+                                <img :src="project.image" :alt="project.title + 'image'">
+                            </div>
+                            <div class="project-used-skills">
+                                <CardSkills class="skill" v-for="(image, i) of project.usedSkills" :key="i">
+                                    <img :src="image" alt="Skill image">
+                                </CardSkills>
+                            </div>
                         </CardModel>
                     </slide>
                     <template #addons>
                         <Navigation />
-                        <Pagination />
                     </template>
                 </carousel>
+                <TheModal :openModal="showDescription" :title="modalTitle" :description="modalDescription" :link="modalLink" @closeModal="closeModal"/>
             </div>
         </div>
     </section>
 </template>
 
 <style scoped>
+    #projects{
+        animation: loadUp ease-in-out 1s forwards;
+    }
     .wrapper{
         display: flex;
         justify-content: center;
     }
     .project{
-        width: 75%;
         border-radius: 1rem;
-    }
-    .project-link{
         display: flex;
-        width: 100%;
+        flex-direction: column;
+        align-items: center;
         padding: 1rem;
-        text-decoration: none;
+        gap: 1rem;
         color: white;
+        cursor: pointer;
     }
-    .project-image{
-        flex: 1;
+    .project h3{
+        font-size: 2rem;
     }
     .project-image img{
         height: 300px;
         border-radius: 1rem;
-    }
-    .project-description{
-        flex: 1;
-    }
-    .project-description h3{
-        font-size: 2rem;
-        margin-bottom: 1rem;
     }
     .skill{
         padding: .5rem;
@@ -88,8 +99,12 @@
         display: flex;
         justify-content: center;
         gap: 1rem;
+        margin-bottom: 1rem;
     }
     .project-used-skills img{
         width: 40px;
+    }
+    .modal-card{
+        width: 50%;
     }
 </style>

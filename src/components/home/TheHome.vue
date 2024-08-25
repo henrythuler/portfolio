@@ -13,7 +13,7 @@
     <section id="home">
         <div class="container">
             <div class="wrapper">
-                <div class="about-me">
+                <div class="about-me-wrapper">
                     <AboutMe />
                 </div>
                 <div class="my-picture">
@@ -30,10 +30,18 @@
         display: flex;
         align-items: center;
     }
-    .about-me{
+    .about-me-wrapper{
         width: 60%;
     }
     .my-picture{
         width: 40%;
+    }
+    @media(max-width: 1024px){
+        .about-me-wrapper{
+            width: 100%;
+        }
+        .my-picture{
+            display: none;
+        }
     }
 </style>

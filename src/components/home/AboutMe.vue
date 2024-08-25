@@ -1,18 +1,23 @@
 <script>
+    import MyPicture from './MyPicture.vue';
     import SocialMedias from './SocialMedias.vue';
     export default {
         components: {
+            MyPicture,
             SocialMedias
         }
     }
 </script>
 
 <template>
-    <div>
+    <div class="about-me">
         <HeaderModel>
             <h4>Hello, I'm Henry Thuler!</h4>
         </HeaderModel>
-        <h2>I am a <span>Full-Stack Developer</span> Based In Brazil</h2>
+        <div class="introduction">
+            <h2>I am a <span>Full-Stack Developer</span> Based In Brazil</h2>
+            <MyPicture class="mobile-picture"/>
+        </div>
         <p>Desenvolvedor com experiência no ecossistema <span>Java (JavaEE)</span> e <span>Spring
         Framework</span>, trabalhando em ambientes de <span>metodologias ágeis</span>. Possuo sólido conhecimento no <span>desenvolvimento de APIs REST</span>, páginas web com <span>Vue.js</span> e <span>Angular</span>
         e com um perfil autodidata, proativo e disciplinado. Tenho facilidade em
@@ -30,6 +35,9 @@
         max-width: max-content;
         animation: loadUp ease-in forwards 1s;
     }
+    .mobile-picture{
+        display: none;
+    }
     header h4{
         font-weight: 500;
     }
@@ -45,5 +53,30 @@
         font-size: 1rem;
         color: white;
         line-height: 1.5rem;
+    }
+    @media(max-width: 1024px){
+        .mobile-picture{
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+        .introduction{
+            display: flex;
+            align-items: center;
+        }
+    }
+    @media(max-width: 768px){
+        .about-me{
+            padding: 1rem .25rem;
+        }
+        h2{
+            font-size: 2.5rem;
+            margin: 0;
+        }
+    }
+    @media(max-width: 425px){
+        h2{
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
     }
 </style>

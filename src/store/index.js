@@ -71,7 +71,7 @@ export default createStore({
                 {
                     title: "OrangeX API",
                     image: "/logo-orange.png",
-                    description: "",
+                    description: "A X like social media API, developed with Java Spring Framework, MongoDB and JWT authentication.",
                     link: "https://github.com/henrythuler/orangex-api",
                     usedSkills: ["/logo-java.png", "/logo-spring.png", "/logo-mongo.png"]
                 },
