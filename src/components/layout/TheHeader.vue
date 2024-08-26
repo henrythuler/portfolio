@@ -121,7 +121,6 @@
         animation: unloadRight .5s ease-in-out forwards;
     }
     .close-menu-button{
-        width: max-content;
         margin-bottom: 2rem;
     }
     .menu-button{
