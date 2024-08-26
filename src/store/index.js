@@ -71,14 +71,14 @@ export default createStore({
                 {
                     title: "OrangeX API",
                     image: "/logo-orange.png",
-                    description: "A X like social media API, developed with Java Spring Framework, MongoDB and JWT authentication.",
+                    description: "API de uma rede social baseada no X, desenvolvida com Java Spring Boot, MongoDB e autenticação JWT.",
                     link: "https://github.com/henrythuler/orangex-api",
                     usedSkills: ["/logo-java.png", "/logo-spring.png", "/logo-mongo.png"]
                 },
                 {
                     title: "Thuler Products",
                     image: "/thuler-products.png",
-                    description: "",
+                    description: "Sistema de gerenciamento de produtos que permite a inserção, atualização, leitura e deleção em um banco de dados PostgreSQL. Desenvolvido com Java EE (JDBC, JSP, Servlets e JSTL)",
                     link: "https://github.com/henrythuler/thuler-products",
                     usedSkills: ["/logo-java.png", "/logo-postgre.png"]
                 }

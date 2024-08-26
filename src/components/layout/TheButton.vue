@@ -9,6 +9,9 @@
 <style scoped>
     .custom-button{
         display: flex;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
         border-radius: 50%;
         transition: all ease-in-out .3s;
     }
@@ -20,7 +23,6 @@
         background-color: transparent;
         border: none;
         text-align: center;
-        padding: .5rem .75rem;
         color: white;
     }
 </style>

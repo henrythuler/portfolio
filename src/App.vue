@@ -67,8 +67,17 @@
     .container{
       max-width: 540px;
     }
+    .carousel .carousel__prev{
+      display: none;
+    }
+    .carousel .carousel__next{
+      display: none;
+    }
   }
   @media(max-width: 564px){
+    #projects{
+      overflow-x: hidden;
+    }
     .container{
       width: 100%;
       padding: 0 .5rem;

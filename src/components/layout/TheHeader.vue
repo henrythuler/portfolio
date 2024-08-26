@@ -26,14 +26,14 @@
             <nav class="desktop-menu">
                 <ul>
                     <li><router-link to="/home">Home</router-link></li>
-                    <li><router-link to="/skills">Skills</router-link></li>
+                    <li><router-link to="/skills">Habilidades</router-link></li>
                 </ul>
             </nav>
             <h1>THULER</h1>
             <nav class="desktop-menu">
                 <ul>
-                    <li><router-link to="/projects">Projects</router-link></li>
-                    <li><router-link to="/contact">Contact</router-link></li>
+                    <li><router-link to="/projects">Projetos</router-link></li>
+                    <li><a target="_blank" href="https://professional-thuler.s3.sa-east-1.amazonaws.com/curriculo_henry_thuler.pdf">Currículo</a></li>
                 </ul>
             </nav>
             <img @click="showMenu" class="menu-button" src="/menu-icon.png" alt="Menu Icon">
@@ -43,9 +43,9 @@
                     <TheButton class="close-menu-button" @click="hideMenu">X</TheButton>
                     <ul>
                         <li><router-link to="/home">Home</router-link></li>
-                        <li><router-link to="/skills">Skills</router-link></li>
-                        <li><router-link to="/projects">Projects</router-link></li>
-                        <li><router-link to="/contact">Contact</router-link></li>
+                        <li><router-link to="/skills">Habilidades</router-link></li>
+                        <li><router-link to="/projects">Projetos</router-link></li>
+                        <li><a target="_blank" href="https://professional-thuler.s3.sa-east-1.amazonaws.com/curriculo_henry_thuler.pdf">Currículo</a></li>
                     </ul>
                 </nav>
                 </transition>

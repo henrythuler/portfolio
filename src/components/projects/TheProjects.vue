@@ -121,6 +121,7 @@
     }
     @media (max-width: 564px){
         .project-image img{
+            max-width: 100%;
             height: 200px;
             border-radius: 1rem;
         }

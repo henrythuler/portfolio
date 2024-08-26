@@ -12,10 +12,10 @@
 <template>
     <div class="about-me">
         <HeaderModel>
-            <h4>Hello, I'm Henry Thuler!</h4>
+            <h4>Olá, meu nome é Henry Thuler!</h4>
         </HeaderModel>
         <div class="introduction">
-            <h2>I am a <span>Full-Stack Developer</span> Based In Brazil</h2>
+            <h2>Sou <span>Desenvolvedor Full-Stack</span></h2>
             <MyPicture class="mobile-picture"/>
         </div>
         <p>Desenvolvedor com experiência no ecossistema <span>Java (JavaEE)</span> e <span>Spring

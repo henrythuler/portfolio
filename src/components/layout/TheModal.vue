@@ -92,4 +92,9 @@
     .modal-leave-active{
         animation: unload .5s ease-in-out;
     }
+    @media (max-width: 768px){
+        .modal-card{
+            width: 100%;
+        }
+    }
 </style>
