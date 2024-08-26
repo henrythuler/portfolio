@@ -70,7 +70,7 @@
         }
         h2{
             font-size: 2.5rem;
-            margin: 0;
+            margin: 1rem 0;
         }
     }
     @media(max-width: 425px){
