@@ -26,7 +26,7 @@
                             <CardSkills class="modal-link-card">
                                 <img src="/logo-github.png" alt="Github Logo">
                             </CardSkills>
-                            <p>View Project Repository</p>
+                            <p>Ver repositório do projeto</p>
                         </a>
                     </CardModel>
                 </dialog>
