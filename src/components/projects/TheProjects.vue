@@ -83,6 +83,10 @@ import CardSkills from '../layout/CardSkills.vue';
         color: white;
         cursor: pointer;
     }
+    .project:hover{
+        animation: scaleUp ease-in-out .3s forwards;
+        box-shadow: 0px 0px 0.5rem #28E98C;
+    }
     .project h3{
         font-size: 2rem;
     }
