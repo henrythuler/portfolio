@@ -47,7 +47,7 @@ import TheButton from './TheButton.vue';
                     <li>
                         <div class="language-switch">
                             <input type="checkbox" id="languageToggle" />
-                            <label for="languageToggle" class="toggle-label" @click="changeLanguage()">
+                            <label for="languageToggle" class="toggle-label" @click="changeLanguage">
                                 <span class="flag flag-en">🇺🇸</span>
                                 <span class="flag flag-pt">🇧🇷</span>
                             </label>
@@ -67,7 +67,7 @@ import TheButton from './TheButton.vue';
                         <li>
                             <div class="language-switch">
                                 <input type="checkbox" id="languageToggle" />
-                                <label for="languageToggle" class="toggle-label">
+                                <label for="languageToggle" class="toggle-label" @click="changeLanguage">
                                     <span class="flag flag-en">🇬🇧</span>
                                     <span class="flag flag-pt">🇧🇷</span>
                                 </label>
