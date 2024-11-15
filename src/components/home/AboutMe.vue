@@ -1,10 +1,22 @@
 <script>
-    import MyPicture from './MyPicture.vue';
+    import { mapGetters } from 'vuex';
+import MyPicture from './MyPicture.vue';
     import SocialMedias from './SocialMedias.vue';
     export default {
         components: {
             MyPicture,
             SocialMedias
+        },
+        computed: {
+            ...mapGetters(['currentLanguage']),
+            homeIntro(){
+                if(this.currentLanguage == 'english') return this.$store.getters.englishHomeIntro
+                else return this.$store.getters.portugueseHomeIntro
+            },
+            homeDesc(){
+                if(this.currentLanguage == 'english') return this.$store.getters.englishHomeDesc
+                else return this.$store.getters.portugueseHomeDesc
+            },
         }
     }
 </script>
@@ -12,20 +24,14 @@
 <template>
     <div class="about-me">
         <HeaderModel>
-            <h4>Olá, meu nome é Henry Thuler!</h4>
+            <h4>{{ homeIntro }}</h4>
         </HeaderModel>
         <div class="introduction">
-            <h2>Sou <span>Desenvolvedor Full-Stack</span></h2>
+            <h2 v-show="currentLanguage == 'portuguese'">Sou <span>Desenvolvedor Full Stack</span></h2>
+            <h2 v-show="currentLanguage == 'english'">I am a <span>Full Stack Developer</span></h2>
             <MyPicture class="mobile-picture"/>
         </div>
-        <p>Desenvolvedor com experiência no ecossistema <span>Java (JavaEE)</span> e <span>Spring
-        Framework</span>, trabalhando em ambientes de <span>metodologias ágeis</span>. Possuo sólido conhecimento no <span>desenvolvimento de APIs REST</span>, páginas web com <span>Vue.js</span> e <span>Angular</span>
-        e com um perfil autodidata, proativo e disciplinado. Tenho facilidade em
-        absorver novos conhecimentos e resolver problemas complexos. Busco
-        constantemente aprimorar minhas habilidades e enfrentar novos
-        desafios que me permitam crescer intelectualmente, acredito
-        firmemente no aprendizado contínuo como um pilar essencial para um
-        profissional excelente.</p>
+        <p>{{ homeDesc }}</p>
         <SocialMedias />
     </div>
 </template>
@@ -50,7 +56,7 @@
         color: #28E98C;
     }
     p{
-        font-size: 1rem;
+        font-size: 1.1rem;
         color: white;
         line-height: 1.5rem;
     }

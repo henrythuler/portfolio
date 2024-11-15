@@ -7,7 +7,8 @@
             TheButton,
             CardSkills
         },
-        props: ['openModal', 'title', 'description', 'link']
+        props: ['openModal', 'title', 'description', 'link'],
+        emits: ['closeModal']
     }
 </script>
 
@@ -50,7 +51,7 @@
         background-color: transparent;
         display: flex;
         justify-content: center;
-        top: 20vh;
+        top: 25vh;
         left: 10%;
         width: 80%;
         z-index: 100;

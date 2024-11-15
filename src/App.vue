@@ -2,7 +2,7 @@
   import TheHeader from './components/layout/TheHeader.vue'
   export default {
     components: {
-      TheHeader,
+      TheHeader
     }
   }
 </script>
@@ -18,7 +18,7 @@
   }
   #app{
     display: grid;
-    padding: 3rem 0;
+    padding: 2rem 0;
     min-height: 100vh;
     grid-template-rows: auto 1fr;
   }

@@ -1,5 +1,6 @@
 <script>
-    import TheButton from './TheButton.vue';
+    import { mapGetters } from 'vuex';
+import TheButton from './TheButton.vue';
     export default {
         components: {
             TheButton
@@ -15,6 +16,16 @@
             },
             hideMenu(){
                 this.isMenuVisible = false
+            },
+            changeLanguage(){
+                this.$store.commit('changeLanguage')
+            }
+        },
+        computed: {
+            ...mapGetters(['currentLanguage']),
+            header(){
+                if(this.currentLanguage == 'english') return this.$store.getters.englishHeader
+                else return this.$store.getters.portugueseHeader
             }
         }
     }
@@ -25,15 +36,23 @@
         <HeaderModel class="main-header">
             <nav class="desktop-menu">
                 <ul>
-                    <li><router-link to="/home">Home</router-link></li>
-                    <li><router-link to="/skills">Habilidades</router-link></li>
+                    <li><router-link to="/home">{{ header[0] }}</router-link></li>
+                    <li><router-link to="/skills">{{ header[1] }}</router-link></li>
                 </ul>
             </nav>
             <h1>THULER</h1>
             <nav class="desktop-menu">
                 <ul>
-                    <li><router-link to="/projects">Projetos</router-link></li>
-                    <li><a target="_blank" href="https://professional-thuler.s3.sa-east-1.amazonaws.com/curriculo_henry_thuler.pdf">Currículo</a></li>
+                    <li><router-link to="/projects">{{ header[2] }}</router-link></li>
+                    <li>
+                        <div class="language-switch">
+                            <input type="checkbox" id="languageToggle" />
+                            <label for="languageToggle" class="toggle-label" @click="changeLanguage()">
+                                <span class="flag flag-en">🇺🇸</span>
+                                <span class="flag flag-pt">🇧🇷</span>
+                            </label>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <img @click="showMenu" class="menu-button" src="/menu-icon.png" alt="Menu Icon">
@@ -42,10 +61,18 @@
                 <nav v-if="isMenuVisible" class="mobile-menu">
                     <TheButton class="close-menu-button" @click="hideMenu">X</TheButton>
                     <ul>
-                        <li><router-link to="/home">Home</router-link></li>
-                        <li><router-link to="/skills">Habilidades</router-link></li>
-                        <li><router-link to="/projects">Projetos</router-link></li>
-                        <li><a target="_blank" href="https://professional-thuler.s3.sa-east-1.amazonaws.com/curriculo_henry_thuler.pdf">Currículo</a></li>
+                        <li><router-link to="/home">{{ header[0] }}</router-link></li>
+                        <li><router-link to="/skills">{{ header[1] }}</router-link></li>
+                        <li><router-link to="/projects">{{ header[2] }}</router-link></li>
+                        <li>
+                            <div class="language-switch">
+                                <input type="checkbox" id="languageToggle" />
+                                <label for="languageToggle" class="toggle-label">
+                                    <span class="flag flag-en">🇬🇧</span>
+                                    <span class="flag flag-pt">🇧🇷</span>
+                                </label>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
                 </transition>
@@ -83,6 +110,10 @@
         -ms-flex-pack: distribute;
             justify-content: space-around;
         list-style-type: none;
+    }
+    nav ul li{
+        display: flex;
+        align-items: center;
     }
     nav ul li a{
         text-decoration: none;
@@ -129,6 +160,51 @@
     }
     .menu-button{
         width: 30px;
+    }
+    .language-switch {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    input[type="checkbox"] {
+        display: none;
+    }
+    .toggle-label {
+        display: flex;
+        height: 45px;
+        align-items: center;
+        cursor: pointer;
+        width: 80px;
+        background-color: none;
+        border: 1px solid #28E98C;
+        border-radius: 15px;
+        position: relative;
+        padding: 0 .25rem;
+    }
+    .toggle-label::after {
+        content: "";
+        width: 35px;
+        height: 35px;
+        background-color: white;
+        border-radius: 50%;
+        position: absolute;
+        transition: transform 0.3s;
+    }
+    input[type="checkbox"]:checked + .toggle-label::after {
+        transform: translateX(100%);
+    }
+    .flag {
+        position: absolute;
+        font-size: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .flag-en {
+        left: 5px;
+    }
+    .flag-pt {
+        right: 5px;
     }
     @media(max-width: 768px){
         .desktop-menu{

@@ -1,21 +1,15 @@
 <script>
-    import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-    import 'vue3-carousel/dist/carousel.css'
-    import CardSkills from '../layout/CardSkills.vue';
+    import { mapGetters } from 'vuex';
+import CardSkills from '../layout/CardSkills.vue';
     import TheModal from '../layout/TheModal.vue';
 
     export default {
         components: {
-            Carousel,
-            Slide,
-            Pagination,
-            Navigation,
             CardSkills,
             TheModal
         },
         data(){
             return {
-                myProjects: this.$store.state.projects,
                 showDescription: false,
                 modalTitle: '',
                 modalDescription: '',
@@ -33,7 +27,14 @@
                 this.showDescription = false
                 this.modalTitle = ''
                 this.modalDescription = ''
-                this.modalLink = link
+                this.modalLink = ''
+            }
+        },
+        computed: {
+            ...mapGetters(['currentLanguage']),
+            projects(){
+                if(this.currentLanguage == 'english') return this.$store.getters.englishProjects
+                else return this.$store.getters.portugueseProjects
             }
         }
     }
@@ -43,24 +44,17 @@
     <section id="projects">
         <div class="container">
             <div class="wrapper">
-                <carousel :items-to-show="1" :autoplay="3000" :pause-autoplay-on-hover="true">
-                    <slide v-for="(project, i) of myProjects" :key="i">
-                        <CardModel @click="openModal(project.title, project.description, project.link)" class="project">
-                            <h3>{{ project.title }}</h3>
-                            <div class="project-image">
-                                <img :src="project.image" :alt="project.title + 'image'">
-                            </div>
-                            <div class="project-used-skills">
-                                <CardSkills class="skill" v-for="(image, i) of project.usedSkills" :key="i">
-                                    <img :src="image" alt="Skill image">
-                                </CardSkills>
-                            </div>
-                        </CardModel>
-                    </slide>
-                    <template #addons>
-                        <Navigation />
-                    </template>
-                </carousel>
+                <CardModel v-for="(project, i) of projects" :key="i"@click="openModal(project.title, project.description, project.link)" class="project">
+                    <h3>{{ project.title }}</h3>
+                    <div class="project-image">
+                        <img :src="project.image" :alt="project.title + 'image'">
+                    </div>
+                    <div class="project-used-skills">
+                        <CardSkills class="skill" v-for="(image, i) of project.usedSkills" :key="i">
+                            <img :src="image" alt="Skill image">
+                        </CardSkills>
+                    </div>
+                </CardModel>
                 <TheModal :openModal="showDescription" :title="modalTitle" :description="modalDescription" :link="modalLink" @closeModal="closeModal"/>
             </div>
         </div>
@@ -71,17 +65,15 @@
     #projects{
         animation: loadUp ease-in-out 1s forwards;
     }
-    .carousel{
-        width: 100%;
-    }
-    .carousel__slide{
-        max-width: 100%;
-    }
     .wrapper{
+        width: 100%;
         display: flex;
         justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
     }
     .project{
+        width: 408px;
         border-radius: 1rem;
         display: flex;
         flex-direction: column;
@@ -95,7 +87,8 @@
         font-size: 2rem;
     }
     .project-image img{
-        height: 300px;
+        max-width: 100%;
+        height: 180px;
         border-radius: 1rem;
     }
     .skill{
@@ -113,15 +106,26 @@
     .modal-card{
         width: 50%;
     }
+    @media (max-width: 1300px){
+        #projects{
+            padding-top: 2rem;
+        }
+    }
     @media (max-width: 768px){
         .project-image img{
-            height: 260px;
+            min-width: 0;
             border-radius: 1rem;
+        }
+        .project{
+            min-width: 300px;
         }
     }
     @media (max-width: 564px){
+        #projects{
+            padding: 2rem .5rem;
+        }
         .project-image img{
-            max-width: 100%;
+            width: 100%;
             height: 200px;
             border-radius: 1rem;
         }
