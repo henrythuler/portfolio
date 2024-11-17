@@ -71,7 +71,11 @@ export default createStore({
             portuguese: {
                 header: ["Home", "Habilidades", "Projetos"],
                 homeIntro: "Olá, meu nome é Henry Thuler!",
-                homeDesc: "Desenvolvedor com experiência no ecossistema Java (JavaEE) e Spring Framework, trabalhando em ambientes de metodologias ágeis. Possuo sólido conhecimento no desenvolvimento de APIs REST, páginas web com Vue.js, e com um perfil autodidata, proativo e disciplinado. Tenho facilidade em absorver novos conhecimentos e resolver problemas complexos. Busco constantemente aprimorar minhas habilidades comportamentais, técnicas e enfrentar novos desafios que me ajudem com isso, acredito firmemente no aprendizado contínuo como um pilar essencial para um profissional excelente.",
+                homeDesc: `Com um ano de experiência apaixonado por tecnologia e inovação. Tenho trabalhado e estudado o ecossistema Java, explorando POO e o Spring Framework. Minha especialidade é criar APIs RESTful e desenvolver páginas web com Vue.js.
+                            Tenho também uma sólida experiência em bancos de dados relacionais (PostgreSQL, MySQL, OracleDB) e não relacionais (MongoDB). Possuo nível avançado de inglês em leitura, escrita e conversação, o que me permite colaborar em ambientes multiculturais.
+                            Ao longo da minha jornada, recebi feedbacks positivos sobre minha rápida capacidade de aprendizado, flexibilidade, colaboração e liderança. Também pela qualidade da documentação técnica que produzi, incluindo diagramas de banco de dados e o uso do Swagger.
+                            Movido pela curiosidade, tenho uma mentalidade autodidata, sempre buscando aprender e me desafiar, resolver problemas complexos e aplicar boas práticas. Atuar em projetos que impactem positivamente a vida das pessoas é meu objetivo e motivação diária.
+                            Além disso, sou um entusiasta de blockchain e web3, temas que exploro com muito interesse. Vamos construir algo incrível juntos!`,
                 projects: [
                     {
                         title: "OrangeX API",
@@ -99,7 +103,11 @@ export default createStore({
             english: {
                 header: ["Home", "Skills", "Projects"],
                 homeIntro: "Hey, my name is Henry Thuler!",
-                homeDesc: "Software Developer with Java (JavaEE) and Spring Framework experience, working on agile environments. With solid knowledge in REST APIs development, web pages using Vue.js, and also a self-taught, self-starter and disciplined profile, I can easily learn new things and solve complex problems. I am constantly improving my soft and hard skills and finding new challenges that help me with it, I strongly believe in lifelong learning as an essential pillar for an excelent professional.",
+                homeDesc: `With one year of experience and a passion for technology and innovation, I have been working and studying the Java ecosystem, exploring OOP and the Spring Framework. My expertise lies in building RESTful APIs and developing web pages with Vue.js.
+                            I also have solid experience with relational databases (PostgreSQL, MySQL, OracleDB) and non-relational databases (MongoDB). With advanced English proficiency in reading, writing, and speaking, I can collaborate effectively in multicultural environments.
+                            Throughout my journey, I've received positive feedback on my quick learning ability, flexibility, collaboration, and leadership skills, as well as the quality of the technical documentation I produced, including database diagrams and Swagger usage.
+                            Driven by curiosity, I have a self-taught mindset, always seeking to learn, challenge myself, solve complex problems, and apply best practices. My daily motivation is to contribute to projects that positively impact people’s lives.
+                            In addition, I am an enthusiast of blockchain and web3, topics I explore with great interest. Let’s build something amazing together!`,
                 projects: [
                     {
                         title: "OrangeX API",

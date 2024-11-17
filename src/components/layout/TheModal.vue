@@ -1,5 +1,6 @@
 <script>
-    import CardSkills from './CardSkills.vue';
+    import { mapGetters } from 'vuex';
+import CardSkills from './CardSkills.vue';
     import TheButton from './TheButton.vue';
 
     export default {
@@ -8,7 +9,14 @@
             CardSkills
         },
         props: ['openModal', 'title', 'description', 'link'],
-        emits: ['closeModal']
+        emits: ['closeModal'],
+        computed: {
+            ...mapGetters(["currentLanguage"]),
+            buttonLabel(){
+                if(this.currentLanguage === "english") return "Project Repository"
+                else return "Repositório do Projeto"
+            }
+        }
     }
 </script>
 
@@ -27,7 +35,7 @@
                             <CardSkills class="modal-link-card">
                                 <img src="/logo-github.png" alt="Github Logo">
                             </CardSkills>
-                            <p>Ver repositório do projeto</p>
+                            <p>{{ buttonLabel }}</p>
                         </a>
                     </CardModel>
                 </dialog>
