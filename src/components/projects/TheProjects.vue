@@ -1,6 +1,6 @@
 <script>
     import { mapGetters } from 'vuex';
-import CardSkills from '../layout/CardSkills.vue';
+    import CardSkills from '../layout/CardSkills.vue';
     import TheModal from '../layout/TheModal.vue';
 
     export default {

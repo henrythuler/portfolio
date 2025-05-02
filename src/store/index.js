@@ -67,6 +67,11 @@ export default createStore({
                     title: "MySQL",
                     image: "/logo-mysql.png"
                 },
+                {
+                    id: 'docker',
+                    title: 'Docker',
+                    image: '/logo-docker.png'
+                }
             ],
             portuguese: {
                 header: ["Home", "Habilidades", "Projetos"],
@@ -97,6 +102,13 @@ export default createStore({
                         description: "API REST para agendamento de consultas médicas, desenvolvido com Java, Spring Framework, JWT Authentication, Swagger e PostgreSQL.",
                         link: "https://github.com/henrythuler/connect-care-api",
                         usedSkills: ["/logo-java.png", "/logo-spring.png", "/logo-postgre.png"]
+                    },
+                    {
+                        title: "TranslateIt",
+                        image: "/translateit.png",
+                        description: "API REST para agendamento de consultas médicas, desenvolvido com Java, Spring Framework, JWT Authentication, Swagger e PostgreSQL.",
+                        link: "https://github.com/henrythuler/connect-care-api",
+                        usedSkills: ["/logo-java.png", "/logo-spring.png", "/logo-postgre.png", "/logo-vue.png", "/logo-docker.png"]
                     }
                 ]
             },
@@ -129,6 +141,13 @@ export default createStore({
                         description: "A REST API for appointments with doctors, developed with Java, Spring Framework, JWT Authentication, Swagger and a PostgreSQL database.",
                         link: "https://github.com/henrythuler/connect-care-api",
                         usedSkills: ["/logo-java.png", "/logo-spring.png", "/logo-postgre.png"]
+                    },
+                    {
+                        title: "TranslateIt",
+                        image: "/translateit.png",
+                        description: "TranslateIt é uma aplicação desenvolvida para gerenciar tradutores e documentos, com detecção automática de idioma dos documentos enviados utilizando a API da OpenAI.",
+                        link: "https://github.com/henrythuler/translateit_app",
+                        usedSkills: ["/logo-java.png", "/logo-spring.png", "/logo-postgre.png", "/logo-vue.png", "/logo-docker.png"]
                     }
                 ]
             }
