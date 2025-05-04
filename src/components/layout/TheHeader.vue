@@ -55,7 +55,7 @@ import TheButton from './TheButton.vue';
                             <input type="checkbox" id="languageToggle" />
                             <label for="languageToggle" class="toggle-label" @click="changeLanguage">
                                 <span v-show="!showLanguage" class="flag flag-en"><img src="/flag-usa.png" alt="USA Flag"></span>
-                                <span v-show="showLanguage" class="flag flag-pt"><img src="/flag-brazil.png" alt="Brazil Flag"></span>
+                                <span v-show="showLanguage" class="flag flag-br"><img src="/flag-brazil.png" alt="Brazil Flag"></span>
                             </label>
                         </div>
                     </li>
@@ -75,7 +75,7 @@ import TheButton from './TheButton.vue';
                                 <input type="checkbox" id="languageToggle" />
                                 <label for="languageToggle" class="toggle-label" @click="changeLanguage">
                                     <span v-show="!showLanguage" class="flag flag-en"><img src="/flag-usa.png" alt="USA Flag"></span>
-                                    <span v-show="showLanguage" class="flag flag-pt"><img src="/flag-brazil.png" alt="Brazil Flag"></span>
+                                    <span v-show="showLanguage" class="flag flag-br"><img src="/flag-brazil.png" alt="Brazil Flag"></span>
                                 </label>
                             </div>
                         </li>
@@ -214,8 +214,8 @@ import TheButton from './TheButton.vue';
     .flag-en {
         left: 5px;
     }
-    .flag-pt {
-        right: -8px;
+    .flag-br {
+        right: -7px;
     }
     @media(max-width: 768px){
         .desktop-menu{
