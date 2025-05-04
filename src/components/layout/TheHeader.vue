@@ -7,7 +7,9 @@ import TheButton from './TheButton.vue';
         },
         data(){
             return{
-                isMenuVisible: false
+                isMenuVisible: false,
+                isPt: false,
+                isEng: true,
             }
         },
         methods: {
@@ -26,6 +28,10 @@ import TheButton from './TheButton.vue';
             header(){
                 if(this.currentLanguage == 'english') return this.$store.getters.englishHeader
                 else return this.$store.getters.portugueseHeader
+            },
+            showLanguage(){
+                if(this.currentLanguage == 'english') return true
+                else return false
             }
         }
     }
@@ -48,8 +54,8 @@ import TheButton from './TheButton.vue';
                         <div class="language-switch">
                             <input type="checkbox" id="languageToggle" />
                             <label for="languageToggle" class="toggle-label" @click="changeLanguage">
-                                <span class="flag flag-en">🇺🇸</span>
-                                <span class="flag flag-pt">🇧🇷</span>
+                                <span v-show="!showLanguage" class="flag flag-en"><img src="/flag-usa.png" alt="USA Flag"></span>
+                                <span v-show="showLanguage" class="flag flag-pt"><img src="/flag-brazil.png" alt="Brazil Flag"></span>
                             </label>
                         </div>
                     </li>
@@ -68,8 +74,8 @@ import TheButton from './TheButton.vue';
                             <div class="language-switch">
                                 <input type="checkbox" id="languageToggle" />
                                 <label for="languageToggle" class="toggle-label" @click="changeLanguage">
-                                    <span class="flag flag-en">🇬🇧</span>
-                                    <span class="flag flag-pt">🇧🇷</span>
+                                    <span v-show="!showLanguage" class="flag flag-en"><img src="/flag-usa.png" alt="USA Flag"></span>
+                                    <span v-show="showLanguage" class="flag flag-pt"><img src="/flag-brazil.png" alt="Brazil Flag"></span>
                                 </label>
                             </div>
                         </li>
@@ -172,39 +178,44 @@ import TheButton from './TheButton.vue';
     }
     .toggle-label {
         display: flex;
-        height: 45px;
+        height: 40px;
         align-items: center;
         cursor: pointer;
-        width: 80px;
+        width: 82px;
         background-color: none;
         border: 1px solid #28E98C;
-        border-radius: 15px;
+        border-radius: 30px;
         position: relative;
         padding: 0 .25rem;
     }
     .toggle-label::after {
         content: "";
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         background-color: white;
         border-radius: 50%;
         position: absolute;
         transition: transform 0.3s;
     }
     input[type="checkbox"]:checked + .toggle-label::after {
-        transform: translateX(100%);
+        transform: translateX(140%);
     }
     .flag {
         position: absolute;
         font-size: 2rem;
         top: 50%;
         transform: translateY(-50%);
+        display: flex;
+        width: fit-content;
+    }
+    .flag img{
+        width: 75%;
     }
     .flag-en {
         left: 5px;
     }
     .flag-pt {
-        right: 5px;
+        right: -8px;
     }
     @media(max-width: 768px){
         .desktop-menu{

@@ -28,9 +28,9 @@ export default createStore({
                     image: "/logo-spring.png"
                 },
                 {
-                    id: 'angular',
-                    title: "Angular",
-                    image: "/logo-angular.png"
+                    id: 'node',
+                    title: "Node.js",
+                    image: "/logo-node.png"
                 },
                 {
                     id: 'vue',
@@ -83,8 +83,15 @@ export default createStore({
                             Além disso, sou um entusiasta de blockchain e web3, temas que exploro com muito interesse. Vamos construir algo incrível juntos!`,
                 projects: [
                     {
-                        title: "OrangeX API",
+                        title: "Orange Portfolio",
                         image: "/logo-orange.png",
+                        description: "App para criar seu portfólio, compartilhando e explorando projetos. A nossa API foi desenvolvida com Node.js, armazenando as informações em um banco de dados PostgreSQL e o Front-end com React.js (MaterialUI).",
+                        link: "https://github.com/orgs/Squad-34-Hackaton-Orange/repositories",
+                        usedSkills: ["/logo-node.png", "/logo-typescript.png", "/logo-postgre.png", "logo-react.png"]
+                    },
+                    {
+                        title: "OrangeX API",
+                        image: "/orangex.png",
                         description: "API de uma rede social baseada no X, desenvolvida com Java Spring Boot, MongoDB e autenticação JWT.",
                         link: "https://github.com/henrythuler/orangex-api",
                         usedSkills: ["/logo-java.png", "/logo-spring.png", "/logo-mongo.png"]
@@ -122,8 +129,15 @@ export default createStore({
                             In addition, I am an enthusiast of blockchain and web3, topics I explore with great interest. Let’s build something amazing together!`,
                 projects: [
                     {
-                        title: "OrangeX API",
+                        title: "Orange Portfolio",
                         image: "/logo-orange.png",
+                        description: "An app to create your portfolio, sharing and exploring projects. Our API was developed with Node.js, storing the data in a PostgreSQL database and the front-end with React.js (MaterialUI).",
+                        link: "https://github.com/orgs/Squad-34-Hackaton-Orange/repositories",
+                        usedSkills: ["/logo-node.png", "/logo-typescript.png", "/logo-postgre.png", "logo-react.png"]
+                    },
+                    {
+                        title: "OrangeX API",
+                        image: "/orangex.png",
                         description: "A X like social media API, developed with Java Spring Framework, MongoDB and JWT authentication.",
                         link: "https://github.com/henrythuler/orangex-api",
                         usedSkills: ["/logo-java.png", "/logo-spring.png", "/logo-mongo.png"]
