@@ -113,8 +113,8 @@ export default createStore({
                     {
                         title: "TranslateIt",
                         image: "/translateit.png",
-                        description: "API REST para agendamento de consultas médicas, desenvolvido com Java, Spring Framework, JWT Authentication, Swagger e PostgreSQL.",
-                        link: "https://github.com/henrythuler/connect-care-api",
+                        description: "TranslateIt é uma aplicação desenvolvida para gerenciar tradutores e documentos, com detecção automática de idioma dos documentos enviados utilizando a API da OpenAI.",
+                        link: "https://github.com/henrythuler/translateit_app",
                         usedSkills: ["/logo-java.png", "/logo-spring.png", "/logo-postgre.png", "/logo-vue.png", "/logo-docker.png"]
                     }
                 ]
@@ -159,7 +159,7 @@ export default createStore({
                     {
                         title: "TranslateIt",
                         image: "/translateit.png",
-                        description: "TranslateIt é uma aplicação desenvolvida para gerenciar tradutores e documentos, com detecção automática de idioma dos documentos enviados utilizando a API da OpenAI.",
+                        description: "TranslateIt is an application designed for managing translators and documents, with automatic language locale detection for uploaded documents using OpenAI’s API.",
                         link: "https://github.com/henrythuler/translateit_app",
                         usedSkills: ["/logo-java.png", "/logo-spring.png", "/logo-postgre.png", "/logo-vue.png", "/logo-docker.png"]
                     }
