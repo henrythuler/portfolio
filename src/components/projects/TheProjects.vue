@@ -12,22 +12,16 @@
             return {
                 showDescription: false,
                 modalTitle: '',
-                modalDescription: '',
-                modalLink: ''
             }
         },
         methods: {
-            openModal(title, description, link){
+            openModal(title){
                 this.showDescription = true
                 this.modalTitle = title
-                this.modalDescription = description
-                this.modalLink = link
             },
             closeModal(){
                 this.showDescription = false
                 this.modalTitle = ''
-                this.modalDescription = ''
-                this.modalLink = ''
             }
         },
         computed: {
@@ -44,7 +38,7 @@
     <section id="projects">
         <div class="container">
             <div class="wrapper">
-                <CardModel v-for="(project, i) of projects" :key="i"@click="openModal(project.title, project.description, project.link)" class="project">
+                <CardModel v-for="(project, i) of projects" :key="i" @click="openModal(project.title)" class="project">
                     <h3>{{ project.title }}</h3>
                     <div class="project-image">
                         <img :src="project.image" :alt="project.title + 'image'">
@@ -55,7 +49,7 @@
                         </CardSkills>
                     </div>
                 </CardModel>
-                <TheModal :openModal="showDescription" :title="modalTitle" :description="modalDescription" :link="modalLink" @closeModal="closeModal"/>
+                <TheModal :openModal="showDescription" :project_title="modalTitle" @closeModal="closeModal"/>
             </div>
         </div>
     </section>

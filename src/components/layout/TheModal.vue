@@ -1,6 +1,6 @@
 <script>
     import { mapGetters } from 'vuex';
-import CardSkills from './CardSkills.vue';
+    import CardSkills from './CardSkills.vue';
     import TheButton from './TheButton.vue';
 
     export default {
@@ -8,13 +8,26 @@ import CardSkills from './CardSkills.vue';
             TheButton,
             CardSkills
         },
-        props: ['openModal', 'title', 'description', 'link'],
+        props: ['openModal', 'project_title'],
         emits: ['closeModal'],
         computed: {
             ...mapGetters(["currentLanguage"]),
             buttonLabel(){
                 if(this.currentLanguage === "english") return "Project Repository"
                 else return "Repositório do Projeto"
+            },
+            project(){
+                let projects = []
+                if(this.currentLanguage === "english"){
+                    projects = this.$store.getters.englishProjects
+                }else{
+                    projects = this.$store.getters.portugueseProjects
+                }
+                for (let p of projects) {
+                    if(p.title === this.project_title){
+                        return p
+                    } 
+                }
             }
         }
     }
@@ -27,11 +40,11 @@ import CardSkills from './CardSkills.vue';
                 <dialog open>
                     <CardModel class="modal-card">
                         <div class="modal-card-header">
-                            <h3>{{ title }}</h3>
+                            <h3>{{ project_title }}</h3>
                             <TheButton @click="$emit('closeModal')">X</TheButton>
                         </div>
-                        <p>{{ description }}</p>
-                        <a class="modal-link" :href="link" target="_blank">
+                        <p>{{ project.description }}</p>
+                        <a class="modal-link" :href="project.link" target="_blank">
                             <CardSkills class="modal-link-card">
                                 <img src="/logo-github.png" alt="Github Logo">
                             </CardSkills>
