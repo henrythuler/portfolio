@@ -29,6 +29,9 @@ import TheButton from './TheButton.vue';
                 if(this.currentLanguage == 'english') return this.$store.getters.englishHeader
                 else return this.$store.getters.portugueseHeader
             },
+            isChecked(){
+                return this.currentLanguage === 'portuguese';
+            },
             showLanguage(){
                 if(this.currentLanguage == 'english') return true
                 else return false
@@ -72,7 +75,12 @@ import TheButton from './TheButton.vue';
                         <li><router-link to="/projects">{{ header[2] }}</router-link></li>
                         <li>
                             <div class="language-switch">
-                                <input type="checkbox" id="languageToggle" />
+                                <input 
+                                    type="checkbox" 
+                                    id="languageToggle" 
+                                    v-model="isChecked" 
+                                    @change="changeLanguage"
+                                />
                                 <label for="languageToggle" class="toggle-label" @click="changeLanguage">
                                     <span v-show="!showLanguage" class="flag flag-en"><img src="/flag-usa.png" alt="USA Flag"></span>
                                     <span v-show="showLanguage" class="flag flag-br"><img src="/flag-brazil.png" alt="Brazil Flag"></span>
@@ -196,6 +204,7 @@ import TheButton from './TheButton.vue';
         border-radius: 50%;
         position: absolute;
         transition: transform 0.3s;
+        left: 5px;
     }
     input[type="checkbox"]:checked + .toggle-label::after {
         transform: translateX(140%);
