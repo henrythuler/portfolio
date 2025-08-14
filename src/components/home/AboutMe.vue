@@ -1,6 +1,6 @@
 <script>
     import { mapGetters } from 'vuex';
-import MyPicture from './MyPicture.vue';
+    import MyPicture from './MyPicture.vue';
     import SocialMedias from './SocialMedias.vue';
     export default {
         components: {
@@ -31,7 +31,7 @@ import MyPicture from './MyPicture.vue';
             <h2 v-show="currentLanguage == 'english'">I am a <span>Full Stack Developer</span></h2>
             <MyPicture class="mobile-picture"/>
         </div>
-        <p>{{ homeDesc }}</p>
+        <p v-html="homeDesc"></p>
         <SocialMedias />
     </div>
 </template>

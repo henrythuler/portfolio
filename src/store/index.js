@@ -76,11 +76,11 @@ export default createStore({
             portuguese: {
                 header: ["Home", "Habilidades", "Projetos"],
                 homeIntro: "Olá, meu nome é Henry Thuler!",
-                homeDesc: `Com um ano de experiência apaixonado por tecnologia e inovação. Tenho trabalhado e estudado o ecossistema Java, explorando POO e o Spring Framework. Minha especialidade é criar APIs RESTful e desenvolver páginas web com Vue.js.
-                            Tenho também uma sólida experiência em bancos de dados relacionais (PostgreSQL, MySQL, OracleDB) e não relacionais (MongoDB). Possuo nível avançado de inglês em leitura, escrita e conversação, o que me permite colaborar em ambientes multiculturais.
-                            Ao longo da minha jornada, recebi feedbacks positivos sobre minha rápida capacidade de aprendizado, flexibilidade, colaboração e liderança. Também pela qualidade da documentação técnica que produzi, incluindo diagramas de banco de dados e o uso do Swagger.
-                            Movido pela curiosidade, tenho uma mentalidade autodidata, sempre buscando aprender e me desafiar, resolver problemas complexos e aplicar boas práticas. Atuar em projetos que impactem positivamente a vida das pessoas é meu objetivo e motivação diária.
-                            Além disso, sou um entusiasta de blockchain e web3, temas que exploro com muito interesse. Vamos construir algo incrível juntos!`,
+                homeDesc: `Desde o início da minha carreira, sou movido por esse pensamento: a tecnologia é uma das ferramentas mais poderosas para resolver problemas reais e gerar mudanças significativas. <br><br>
+                            Atuo em toda a stack: no back-end com Java e Spring Boot, no front-end com Vue.js e Nuxt.js; desenvolvendo APIs RESTful escaláveis, aprimorando a experiência do usuário e utilizando tecnologias como PostgreSQL, Kafka, AWS e Kubernetes. <br><br>
+                            Um dos destaques da minha trajetória foi contribuir para uma Prova de Conceito do projeto DREX do Banco Central do Brasil: uma iniciativa baseada em blockchain para a tokenização do Real. Desenvolvi microsserviços em NestJS integrados a smart contracts, entregando um fluxo funcional de câmbio entre Real Tokenizado e USD. Posteriormente, compartilhei essa experiência no palco do evento Imersão Dev25K com a comunidade Web3. <br><br>
+                            Ao longo dessa jornada, fui reconhecido pela minha capacidade de aprendizado rápido, adaptabilidade e liderança; além da habilidade em produzir documentação técnica clara, desde diagramas de banco de dados até especificações de APIs com Swagger.
+                            Fora do trabalho, sou envolvido no ecossistema Web3, explorando como essas tecnologias podem transformar as finanças, os negócios e a sociedade.`,
                 projects: [
                     {
                         title: "Orange Portfolio",
@@ -122,11 +122,11 @@ export default createStore({
             english: {
                 header: ["Home", "Skills", "Projects"],
                 homeIntro: "Hey, my name is Henry Thuler!",
-                homeDesc: `With one year of experience and a passion for technology and innovation, I have been working and studying the Java ecosystem, exploring OOP and the Spring Framework. My expertise lies in building RESTful APIs and developing web pages with Vue.js.
-                            I also have solid experience with relational databases (PostgreSQL, MySQL, OracleDB) and non-relational databases (MongoDB). With advanced English proficiency in reading, writing, and speaking, I can collaborate effectively in multicultural environments.
-                            Throughout my journey, I've received positive feedback on my quick learning ability, flexibility, collaboration, and leadership skills, as well as the quality of the technical documentation I produced, including database diagrams and Swagger usage.
-                            Driven by curiosity, I have a self-taught mindset, always seeking to learn, challenge myself, solve complex problems, and apply best practices. My daily motivation is to contribute to projects that positively impact people’s lives.
-                            In addition, I am an enthusiast of blockchain and web3, topics I explore with great interest. Let’s build something amazing together!`,
+                homeDesc: `Since the beginning of my career, I’ve been driven by this thought: technology is one of the most powerful tools to solve real-world problems and create meaningful change. <br><br>
+                            I work across the stack: back-end with Java and Spring Boot, front-end with Vue.js and Nuxt.js; building scalable RESTful APIs, improving user experiences, using technologies like PostgreSQL, Kafka, AWS, and Kubernetes. <br><br>
+                            One of my journey's highlight was contributing to a Proof of Concept for the Central Bank of Brazil’s DREX project: a blockchain-based initiative for Brazilian Real tokenization. I developed microservices in NestJS integrated with smart contracts, delivering a functional currency exchange flow between tokenized Brazilian Real and USD. Later I shared that experience on stage at the Imersão Dev25K event with the Web3 community. <br><br>
+                            Along the way, I’ve been recognized for my quick learning, adaptability, and leadership; as well as for creating clear technical documentation, from database diagrams to detailed Swagger API docs.
+                            Beyond my professional work, I am engaged in the Web3 ecosystem, exploring how these technologies can transform finance, business, and society.`,
                 projects: [
                     {
                         title: "Orange Portfolio",
